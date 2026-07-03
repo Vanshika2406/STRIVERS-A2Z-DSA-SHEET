@@ -24,3 +24,5 @@ int missingnumber(vector<int> &nums){
     }
     return optimum_sum - actual_sum;
 }
+// tc= O(N)
+//SC + O(1)
