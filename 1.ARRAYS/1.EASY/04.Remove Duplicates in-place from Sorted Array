@@ -29,6 +29,8 @@ APPROACH:-
 */
 
 // CODE:-
+#include <bits/stdc++.h>
+using namespace std;
 int removeDuplicates(vector<int> &nums)
 {
     int i= 0; // upto k array contains unique elements
