@@ -31,9 +31,6 @@ int main() {
             return 0;
         }
     }
-
-    cout << "No second largest element exists" << endl;
-    return 0;
 }
 
                                       //Time Complexity: O(N log N)
