@@ -38,7 +38,7 @@ int removeDuplicates(vector<int> &nums)
     {
         if (nums[i] != nums[j])
         {
-            nums[i+1]=nums[i];
+            nums[i+1]=nums[j];
             i++;
         }
     }
