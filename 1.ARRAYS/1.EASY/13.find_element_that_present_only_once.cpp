@@ -20,3 +20,5 @@ int singlenumber(vector<int>&nums){
   }
 return xorr;
 }
+// tc = O(n)
+// sc = O(1)
