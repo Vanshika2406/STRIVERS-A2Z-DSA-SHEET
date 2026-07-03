@@ -15,20 +15,24 @@ brute force algorithm:
 using namespace std;
 
 int main() {
-    int arr[] = {1, 5, 3, 9, 7, 9};
+    int arr[] = {2, 5, 1, 3, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    sort(arr, arr + n); //sort() arranges the array in ascending order.
+    sort(arr, arr + n);
 
     int largest = arr[n - 1];
+    int secondLargest = -1;
 
     for (int i = n - 2; i >= 0; i--) {
         if (arr[i] != largest) {
-            cout << "Second largest: " << arr[i] << endl;
-            return 0;
+            secondLargest = arr[i];
+            break;
         }
     }
+    cout << "Second Largest: " << secondLargest << endl;
+    return 0;
 }
+
 
                                       //Time Complexity: O(N log N)
                                     //Space Complexity: O(1)
