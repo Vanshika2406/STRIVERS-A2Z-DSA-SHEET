@@ -1,15 +1,16 @@
-//Find Second Smallest and Second Largest Element in an array
+//Problem Statement: 
+//Given an array, we have to find the largest element in the array.
+
 /*Example 1:
 Input:
- [1, 2, 4, 7, 7, 5]  
+ arr[] = {2, 5, 1, 3, 0}  
 Output:
-Second Smallest : 2  
-Second Largest : 5
+ 5  
+Explanation: 5 is the largest element in the array.*/
 
-brute force algorithm:
-1. Sort the array in ascending order.
-2. Traverse the sorted array to find the second smallest and second largest elements.
-*/
+//ALGORITHM:
+/*Sort the array in ascending order.
+Print the element at the (size of the array - 1)th index, which corresponds to the largest element in the array.*/
 
 #include <bits/stdc++.h>
 using namespace std;
