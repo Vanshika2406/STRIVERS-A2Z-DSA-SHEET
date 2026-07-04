@@ -34,12 +34,12 @@ vector<int> twoSum(vector<int> &nums, int target)
     for (int i = 0; i < nums.size(); i++)
     {
         int remain = target - nums[i];
-        if (mp.find(remain) != mp.end() && mp[remain] != i)
-            return {i, mp[remain]};
+        if (mp.find(remain) != mp.end() ) 
+            return "yes";
         mp[nums[i]] = i;
     }
-    return {-1, -1};
-    // If the question asks to just return whether pair exists or not, not the indexes in that case we can sort and easily find the pair sum without extra space
+    return "no";
+    
 }
 
 // TIME COMPLEXITY = O(N)
