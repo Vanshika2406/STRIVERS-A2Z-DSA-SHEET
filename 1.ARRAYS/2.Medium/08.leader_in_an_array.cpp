@@ -23,10 +23,12 @@ To find the leaders in the array, we can follow these steps:
 // CODE:
 vector<int> superiorElements(vector<int>&a){
   vector<int> ans;
-  int maxi = INT_MIN;  //Function to find the leaders in an array.
-  int n = a.size();
-  for(int i=n-1;i>=0;i--){  // Last element of the vector is always a leader
-      if(a[i]>maxi){        // Check elements from right to left
+//maxi stores the largest element we've seen so far while moving from right to left.At the very beginning, we haven't seen any element yet.
+//So we initialize maxi with the smallest possible number, so that the first element we check (the last element of the array) is always greater than it.
+  int maxi = INT_MIN;  
+  for(int i=n-1;i>=0;i--){  // Last element of the vector is always a leader 
+   //Why from right? Because we need to know whether the current element is greater than everything on its right.
+      if(a[i]>maxi){        
          ans.push_back(a[i]);
       }
       maxi = max(maxi,a[i]);
