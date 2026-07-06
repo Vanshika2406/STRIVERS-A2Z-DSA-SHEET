@@ -19,16 +19,18 @@ To generate the `rowIndex`th row of Pascal's triangle, we can use the property t
 **CODE:**
 */
 
-vector<int> getRow(int rowIndex) {
-    vector<int> row(rowIndex + 1, 1); // Initialize the row with 1s
-    long long coefficient = 1;
+vector<int> getRow(int row) {
+    vector<int> ansRow
+    long long ans = 1;
+    ansRow.push_back(1);
     
-    for (int col = 1; col <= rowIndex; col++) {
-        coefficient = coefficient * (rowIndex - col + 1) / col;
-        row[col] = coefficient;
+    for (int col = 1; col <= row; col++) {
+        ans = ans * (row - col );
+        ans = ans / col;
+        ansRow.push_back(ans);
     }
     
-    return row;
+    return ansrow;
 }
 
 /*
