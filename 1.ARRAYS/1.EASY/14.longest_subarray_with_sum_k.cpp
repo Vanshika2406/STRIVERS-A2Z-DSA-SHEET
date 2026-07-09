@@ -29,7 +29,7 @@ int longestSubarrayWithSumK(vector<int> a, long long k){
             left++;
        }
        if(sum==k){
-          maxLen = max(maxLen,right-left+1);
+          maxLen = max(maxLen,right-left+1);  //calculate the number of elements within a specific range
        }
       right++;
       if(right<n)sum+=a[right];
