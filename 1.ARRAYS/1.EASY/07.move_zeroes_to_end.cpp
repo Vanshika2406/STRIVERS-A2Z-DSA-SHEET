@@ -16,14 +16,14 @@ Increment j.
 
 //code:
 void moveZeroes(vector<int>& nums) {
-int j=-1;
-for(int i=0;i<n;i++){
+int j=-1; // point to first zero
+for(int i=0;i<n;i++){  //find first zero
    if(arr[i]==0){
       j=i;
       break;
       }
 }
-for(int i=j+1;i<n;i++){
+for(int i=j+1;i<n;i++){  // start from next index of first
     if(arr[i]!=0){
       swap(arr[i],arr[j]);
           j++;
