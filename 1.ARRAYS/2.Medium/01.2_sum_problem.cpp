@@ -36,7 +36,7 @@ vector<int> twoSum(vector<int> &nums, int target)
         int remain = target - nums[i];
         if (mp.find(remain) != mp.end() ) 
             return "yes";
-        mp[nums[i]] = i;
+        mp[nums[i]] = i;  //Store the current number and its index in the map
     }
     return "no";
     
