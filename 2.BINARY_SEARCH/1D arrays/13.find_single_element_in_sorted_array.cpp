@@ -15,8 +15,8 @@ Compare nums[mid] and nums[mid + 1].
 If they are equal, the unique element lies in the right half.
 Otherwise, it lies in the left half (including mid).
 Return nums[left]
-
 CODE:
+*/
 int singleNonDuplicate(vector<int>& nums) {
     int left = 0;
     int right = nums.size() - 1;
