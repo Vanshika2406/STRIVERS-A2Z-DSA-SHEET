@@ -21,12 +21,12 @@ CODE:
 */
 
 vector<int> searchRange(vector<int>& nums, int target){
-  int first = lower_bound(nums.begin(), nums.end(), target) - nums.begin();
+  int first = lower_bound(nums.begin(), nums.end(), target) - nums.begin();  //Subtracting nums.begin() converts the iterator into an index.
 // if the target is not found, return [-1,-1]
   if(first == nums.size() || nums[first] != target)
     return {-1,-1};
   int last = upper_bound(nums.begin(), nums.end(), target) - nums.begin();
-  return { first, last -1}
+  return { first, last -1}  //upper_bound() points one position after the last occurrence, subtract 1.
 }
 
 // TIME COMPLEXITY: O(log n)
