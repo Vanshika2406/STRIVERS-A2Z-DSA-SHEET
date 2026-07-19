@@ -38,7 +38,5 @@ int findKRotation(int arr[], int n) {
     return low;
 }
 
-//time complexity= O(nlogn)
-//space complexity = O(1)
 // TIME COMPLEXITY: O(log n)
 // SPACE COMPLEXITY: O(1)
