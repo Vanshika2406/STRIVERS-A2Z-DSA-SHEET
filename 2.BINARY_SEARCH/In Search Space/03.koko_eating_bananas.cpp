@@ -26,7 +26,7 @@ APPROACH:
 
 CODE:
 */
-int findmax(vector<int> &v){ //receives the banana piles by reference.
+int findmax(vector<int> &v){ //find the largest banana pile receives the banana piles by reference.
   int maxi = INT_MIN;
   int n = v.size();
   for(int i = 0;i<n;i++){
