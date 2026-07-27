@@ -16,7 +16,14 @@ The final sorted array would be -
 1, 2, 3, 4, 6, 7, 8, 9, 10
 The 5th element of this array is 6.
 
-CODE:
+APPROACH:
+  Array A:  ... a[mid1-1]  |  a[mid1] ...
+                     l1  |  r1
+  Array B:  ... b[mid2-1]  |  b[mid2] ...
+                     l2  |  r2
+If we take mid1 elements from Array A, we must take mid2 = k - mid1 elements from Array B to get a total of $k$ elements.
+If the cut is valid, the greatest element on the left side (max(l1, l2)) is your answer!
+CODE:*/
 int kthElement(vector<int> &a, vector<int>& b, int n1, int n2, int k){
   if(n1>n2) return kth Element(b,a,n2,n1,k); //Always binary search on the smaller array.
   int low =  max(k-n2,0), high = min(k,n1);
