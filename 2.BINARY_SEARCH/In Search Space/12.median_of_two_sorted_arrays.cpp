@@ -47,3 +47,43 @@ double median(vector<int>& a, vector<int>& b){
 /*Time & Space Complexity
 Time: O(log(min(n1, n2))) because binary search is performed only on the smaller array.
 Space: O(1) since only a few variables are used.*/
+double median(vector<int>& a, vector<int>& b){
+  int n1 = a.size(), n2= b.size();
+  int i = 0;
+  int j = 0;
+  int n = (n1+n2); //Calculates the total number of elements across both arrays combined.
+  int ind2 = n/2;
+  int ind1 = ind2 - 1;
+  int cnt = 0;
+  int ind1el = -1, ind2el = -1;
+  while(i<n1 && j<n2){
+      if(a[i] < b[j]){ //Compares the current elements. If a[i] is smaller, it belongs next in our sorted sequenc
+        if(cnt == ind1) ind1el = a[i]; //if our current step cnt matches the left median index, save the number a[i] into ind1el.
+        if(cnt == ind2) ind2el = a[i]; //If our current step cnt matches the right median index, save the number a[i] into ind2el.
+        cnt++;
+        i++;
+      }
+      else{
+        if(cnt == ind1) ind1el = b[j];
+        if(cnt == ind2) ind2el = b[j];
+        cnt++;
+        j++;
+      }
+  }
+  while(i<n1){
+        if(cnt == ind1) ind1el = a[i];
+        if(cnt == ind2) ind2el = a[i];
+        cnt++;
+        i++;
+  }
+  while(j<n2){
+        if(cnt == ind1) ind1el = b[i];
+        if(cnt == ind2) ind2el = b[i];
+        cnt++;
+        j++;
+  }
+  if(n%2 == 1){ //Checks if the total number of elements (n) is odd. If it is, there is a single exact middle element, which is stored in ind2el.
+     return ind2el;
+  } //If n is even, the median is the average of the two middle elements (ind1el and ind2el). We cast to double and divide by 2.0 to preserve decimal precision.
+  return (double)(ind1el + ind2el) / 2.0;
+}
