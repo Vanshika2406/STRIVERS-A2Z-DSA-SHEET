@@ -28,15 +28,15 @@ APPROACH:-
 // CODE:-
 bool searchMatrix(vector<vector<int>> &matrix, int target)
 {
-    int n = matrix.size();
-    int m = matrix[0].size();
+    int n = matrix.size(); //matrix.size() gives the number of rows
+    int m = matrix[0].size(); //Finds the number of columns using the first row.
     int low = 0;
     int high = n * m - 1;
     while (low <= high)
     {
         int mid = low + (high - low) / 2;
-        int row = mid/m;
-        int col = mid % m;
+        int row = mid/m; //This converts the 1D index into a row number.
+        int col = mid % m; //This finds the column.
         if(mat[row][col] == target) return true;
         else if(mat[row][col] < target){
             low = mid + 1;
