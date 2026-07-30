@@ -23,6 +23,9 @@ APPROACH:
 - Find the maximum element in each column and check if it is a peak element by comparing it with its adjacent elements.
 - If it is a peak element, return its position [i, j].
 
+/*We first find the maximum element in the middle column. Since it is the maximum of that column, its upper and lower neighbours are automatically smaller.
+Therefore, we only need to compare it with its left and right neighbours.
+
 TIME COMPLEXITY: O(m log(n)) or O(n log(m)) - Binary search is performed on the columns of the matrix.
 SPACE COMPLEXITY: O(1) - Constant space is used.
 
@@ -30,11 +33,11 @@ CODE:*/
 // Finds the row index of the maximum element in column 'col'
 int max_finder(vector<vector<int>>& mat, int n, int m, int col) {
     int maxi = -1;
-    int index = -1;
+    int index = -1; //maximum element kis row mein mila.
     for (int i = 0; i < n; i++) {
         if (mat[i][col] > maxi) {
             maxi = mat[i][col];
-            index = i;
+            index = i; //Maximum update karo aur uski row store karo.
         }
     }
     return index;
@@ -45,7 +48,7 @@ vector<int> findPeakGrid(vector<vector<int>> &mat){
   int low = 0, high = m-1;
   while(low <= high){
        int mid = (low+high)/2;
-       int maxRowIndex = max_finder(mat,n,m,mid);
+       int maxRowIndex = max_finder(mat,n,m,mid); //sabse bada element dhoondh rahe hain. Up aur down automatically smaller hain.Isliye hume sirf left aur right check karna hai!
     //Grabs the value of the neighbor immediately to the left of our column max. 
     //If mid - 1 is out of bounds (we are at column 0), it assigns a sentinel value of -1 so any valid grid number will be larger than it.
        int left = mid - 1>= 0 ? mat[maxRowIndex][mid-1] : -1;
